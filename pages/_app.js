@@ -1,7 +1,7 @@
 import 'tailwindcss/tailwind.css';
 
-function Dashboard({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+export default function Dashboard({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page);
 
-export default Dashboard;
+  return getLayout(<Component {...pageProps} />);
+}
