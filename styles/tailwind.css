@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.sidebar-h {
+    height: calc(100vh - 3rem);
+}
