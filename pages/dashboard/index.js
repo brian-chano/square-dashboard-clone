@@ -1,11 +1,17 @@
 import Layout from '../../components/Layout';
 
-const Card = () => {
+const Card = ({ title, width, sales }) => {
   return (
-    <div className='py-4 px-4  border rounded-md w-1/2 text-gray-800'>
-      <p>Gross sales</p>
+    <div
+      className={`${width} py-4 px-4  border rounded-md ${
+        width === 'w-full' ? 'font-bold' : 'text-gray-800'
+      }`}
+    >
+      <p>{title}</p>
       <span className='flex space-x-1 items-center mt-4'>
-        <p className='text-2xl text-gray-500 font-bold'>No sales yet today</p>
+        <p className='text-2xl text-gray-500 font-bold'>
+          {sales ? sales : 'No sales yet today'}
+        </p>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='h-4 w-4 text-gray-500 cursor-pointer'
@@ -25,9 +31,67 @@ const Card = () => {
   );
 };
 
+const History = ({ title, value }) => {
+  return (
+    <div className='border-t border-b border-gray-100 text-sm'>
+      <div className='px-1 py-4 flex items-center justify-between hover:cursor-pointer hover:text-blue-600'>
+        {title}
+        <span className='flex items-center'>
+          <p>{value}</p>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-3 w-3 ml-4'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M9 5l7 7-7 7'
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  );
+};
+
+const HISTORY_ITEMS = [
+  {
+    title: 'Total Customers',
+    value: 20,
+  },
+  {
+    title: 'New Customers',
+    value: 8,
+  },
+  {
+    title: 'Returning Customers',
+    value: 2,
+  },
+  {
+    title: 'Average spending per visit ',
+    value: 'Ush.120,000',
+  },
+  {
+    title: 'Average visits per customer',
+    value: 1,
+  },
+  {
+    title: 'Positive feedback',
+    value: '95%',
+  },
+  {
+    title: 'Negative feedback',
+    value: '5%',
+  },
+];
+
 export default function Index() {
   return (
-    <div className='flex justify-center py-10 lg:space-x-14 sm:space-x-10 sm:mx-12 lg:mx-[27rem] relative top-auto left-auto mt-14'>
+    <div className='flex justify-center py-10 lg:space-x-12 sm:space-x-10 sm:mx-12 lg:mx-[27rem] relative top-auto left-auto mt-14'>
       <div className='flex flex-col space-y-8 lg:w-[40rem] sm:w-3/4'>
         <div className='flex flex-col space-y-6 bg-white w-full rounded-md border shadow-sm py-10 px-4 text-gray-800'>
           <div className='flex justify-between'>
@@ -55,34 +119,54 @@ export default function Index() {
             </p>
             <div className='h-[0.50rem] w-full bg-gray-300 rounded-lg'></div>
             <p className='text-xs'>0% set up</p>
-            <button className='bg-indigo-600 text-white py-3 px-3 rounded-md hover:bg-indigo-700'>
+            <button className='bg-blue-600 text-white py-3 px-3 rounded-md hover:bg-blue-700'>
               Setup Guide
             </button>
           </div>
         </div>
         <div>Today</div>
         <div className='flex justify-between space-x-4'>
-          <Card />
-          <Card />
+          <Card title={'Gross sales'} width='w-1/2' />
+          <Card title={'Transactions'} width='w-1/2' />
         </div>
-        <div className='flex justify-between space-x-4'>
-          <Card />
-          <Card />
+        <div className='flex justify-between'>
+          <Card title={'Payment types'} width='w-full' />
         </div>
-        <div className='flex justify-between space-x-4'>
-          <Card />
-          <Card />
+        <div className='flex justify-between'>
+          <Card title={'Top items by sales'} width='w-full' />
         </div>
-        <div className='flex justify-between space-x-4'>
-          <Card />
-          <Card />
-        </div>
-        <div className='flex justify-between space-x-4'>
-          <Card />
-          <Card />
+        <div className='flex justify-between'>
+          <Card title={'Top categories by sales'} width='w-full' />
         </div>
       </div>
-      <div className='bg-gray-50 lg:w-[20rem] sm:w-[13rem] py-3 px-3'></div>
+      <div className='lg:w-[20rem] sm:w-[13rem] px-3'>
+        <div className='flex space-x-4 bg-gray-200 rounded-md py-3 px-3 text-blue-600 font-semibold'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-6 w-6'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
+              d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'
+            />
+          </svg>
+          <p>Add an item</p>
+        </div>
+
+        <p className='font-bold text-lg mt-10 mb-4'>Last 30 days</p>
+        <div>
+          {HISTORY_ITEMS.map((item) => {
+            return (
+              <History title={item.title} key={item.title} value={item.value} />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
