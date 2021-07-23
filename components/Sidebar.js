@@ -26,7 +26,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
               <Link href={item.route} key={item.name}>
                 <div className='flex flex-col items-center space-y-2'>
                   <div
-                    className={`bg-indigo-600 cursor-pointer rounded-xl transform hover:scale-[1.05] transition duration-300 ease-in-out`}
+                    className={`bg-blue-600 cursor-pointer rounded-xl transform hover:scale-[1.05] transition duration-300 ease-in-out`}
                   >
                     <div className='flex justify-center items-center text-white h-14 w-14 '>
                       {item.icon}
