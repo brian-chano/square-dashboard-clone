@@ -5,7 +5,7 @@ export default function Header() {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
     <>
-      <header className='flex bg-white h-14 justify-between px-6 py-4 border-b-2 relative'>
+      <header className='flex bg-white h-14 justify-between px-6 py-4 border-b-2 fixed top-0 left-0 w-full z-50'>
         <div
           className='flex space-x-4 cursor-pointer text-gray-500 hover:text-gray-900'
           onClick={() => setShowSideBar(!showSideBar)}
@@ -26,7 +26,7 @@ export default function Header() {
           </svg>
           <p className='font-semibold text-gray-900'>Home</p>
         </div>
-        <div className='sm:hidden lg:block'>
+        {/* <div className='sm:hidden lg:block'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='h-6 w-6'
@@ -41,7 +41,7 @@ export default function Header() {
               d='M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z'
             />
           </svg>
-        </div>
+        </div> */}
 
         <div className='flex space-x-5 text-gray-500 cursor-pointer items-center'>
           <svg

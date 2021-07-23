@@ -24,9 +24,9 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
           <div className='grid gap-8 grid-cols-3 '>
             {SIDE_BAR_ITEMS.map((item) => (
               <Link href={item.route} key={item.name}>
-                <button className='flex flex-col items-center space-y-2'>
+                <div className='flex flex-col items-center space-y-2'>
                   <div
-                    className={`${item.bgColor} cursor-pointer rounded-xl transform hover:scale-[1.05] transition duration-300 ease-in-out `}
+                    className={`bg-indigo-600 cursor-pointer rounded-xl transform hover:scale-[1.05] transition duration-300 ease-in-out`}
                   >
                     <div className='flex justify-center items-center text-white h-14 w-14 '>
                       {item.icon}
@@ -35,7 +35,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
                   <div className='text-xs text-center text-gray-700'>
                     {item.name}
                   </div>
-                </button>
+                </div>
               </Link>
             ))}
           </div>
