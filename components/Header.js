@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
+
+// Headless UI
+import { Menu, Transition } from '@headlessui/react';
+
 import Sidebar from './Sidebar';
 
 export default function Header() {
@@ -100,8 +104,52 @@ export default function Header() {
               d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'
             />
           </svg>
-
-          <p className='text-sm hover:text-gray-900'>Brian Ochan</p>
+          <Menu
+            as='div'
+            className='relative inline-block text-left hover:text-gray-900'
+          >
+            <Menu.Button className='inline-flex justify-center w-full text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'>
+              Chano.IT
+            </Menu.Button>
+            <Transition
+              as={Fragment}
+              enter='transition ease-out duration-100'
+              enterFrom='transform opacity-0 scale-95'
+              enterTo='transform opacity-100 scale-100'
+              leave='transition ease-in duration-75'
+              leaveFrom='transform opacity-100 scale-100'
+              leaveTo='transform opacity-0 scale-95'
+            >
+              <Menu.Items className='absolute right-0 w-60 mt-5 origin-top-right bg-white rounded-md shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                <div>
+                  <Menu.Item className='px-6 pt-4 text-gray-900 cursor-default'>
+                    <div className=' flex flex-col w-full'>
+                      <p className='font-medium text-sm'>Brian Ochan</p>
+                      <p className='text-sm font-light'>Owner</p>
+                    </div>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <div className='mt-3 text-blue-600 group w-full text-sm hover:bg-blue-200 py-1'>
+                      <p className='px-6'>Account Settings</p>
+                    </div>
+                  </Menu.Item>
+                  <Menu.Item as='div' className='px-6 pt-4  cursor-default'>
+                    <div className='h-[0.01rem] bg-gray-200'></div>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <div className='mt-3 text-blue-600 group w-full text-sm hover:bg-blue-200 py-1'>
+                      <p className='px-6'>Tour your Dashboard</p>
+                    </div>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <div className='mb-6 text-blue-600 group w-full text-sm hover:bg-blue-200 py-1'>
+                      <p className='px-6'>Sign Out</p>
+                    </div>
+                  </Menu.Item>
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
         </div>
       </header>
       <Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
