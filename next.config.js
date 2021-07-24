@@ -1,5 +1,5 @@
 module.exports = {
   exportPathMap: function () {
-    return { '/': { page: '/dashboard' } };
+    return { '/': { page: '/login' } };
   },
 };
