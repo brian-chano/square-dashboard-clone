@@ -18,7 +18,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
       <aside
         className={`transform ${
           showSideBar ? 'translate-x-0' : '-translate-x-full'
-        } w-80 border-r border-t fixed top-12 sidebar-h overflow-auto ease-in-out transition-all duration-300 z-30 bg-white shadow-xl`}
+        } w-80 border-r fixed top-12 sidebar-h overflow-auto ease-in-out transition-all duration-300 z-30 bg-white shadow-xl`}
       >
         <div className='p-8'>
           <div className='grid gap-8 grid-cols-3 '>
