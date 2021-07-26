@@ -1,5 +1,7 @@
 import Layout from '../../components/Layout';
 
+import { HISTORY_ITEMS } from '../../constants';
+
 const Card = ({ title, width, sales }) => {
   return (
     <div
@@ -58,41 +60,10 @@ const History = ({ title, value }) => {
   );
 };
 
-const HISTORY_ITEMS = [
-  {
-    title: 'Total Customers',
-    value: 20,
-  },
-  {
-    title: 'New Customers',
-    value: 8,
-  },
-  {
-    title: 'Returning Customers',
-    value: 2,
-  },
-  {
-    title: 'Average spending per visit ',
-    value: 'Ush.120,000',
-  },
-  {
-    title: 'Average visits per customer',
-    value: 1,
-  },
-  {
-    title: 'Positive feedback',
-    value: '95%',
-  },
-  {
-    title: 'Negative feedback',
-    value: '5%',
-  },
-];
-
 export default function Index() {
   return (
-    <div className='flex justify-center py-10 lg:space-x-12 sm:space-x-10 sm:mx-12 lg:mx-[27rem] relative top-auto left-auto mt-14'>
-      <div className='flex flex-col space-y-8 lg:w-[40rem] sm:w-3/4'>
+    <div className='flex relative lg:space-x-12 sm:space-x-10 lg:mx-[27rem] mt-28 sm:px-10'>
+      <div className='flex flex-col space-y-6 lg:w-[40rem] sm:w-[34rem]'>
         <div className='flex flex-col space-y-6 bg-white w-full rounded-md border shadow-sm py-10 px-4 text-gray-800'>
           <div className='flex justify-between'>
             <h1 className='text-3xl font-semibold text-gray-900'>
@@ -113,7 +84,7 @@ export default function Index() {
               />
             </svg>
           </div>
-          <div className='flex flex-col space-y-4 items-start'>
+          <div className='flex flex-col space-y-6 items-start'>
             <p>
               Our Setup Guide will walk you through how to get set up on Square.
             </p>
@@ -124,7 +95,7 @@ export default function Index() {
             </button>
           </div>
         </div>
-        <div>Today</div>
+        <div className='font-bold'>Today</div>
         <div className='flex justify-between space-x-4'>
           <Card title={'Gross sales'} width='w-1/2' />
           <Card title={'Transactions'} width='w-1/2' />
@@ -139,7 +110,7 @@ export default function Index() {
           <Card title={'Top categories by sales'} width='w-full' />
         </div>
       </div>
-      <div className='lg:w-[20rem] sm:w-[13rem] px-3'>
+      <div className='lg:w-[20rem] px-3'>
         <div className='flex space-x-4 bg-gray-200 rounded-md py-3 px-3 text-blue-600 font-semibold'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
