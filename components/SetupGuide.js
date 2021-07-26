@@ -21,7 +21,7 @@ const SetupGuide = ({ showSetupGuide, setShowSetupGuide }) => {
           className='bg-gray-100 px-4 py-4 rounded-md hover:bg-blue-100'
           onClick={() => setShowSetupGuide(!showSetupGuide)}
         >
-          <svg viewBox='1.5 1.5 13 13' class='w-3 h-3'>
+          <svg viewBox='1.5 1.5 13 13' className='w-3 h-3'>
             <path
               d='M3 3L13 13M13 3L3 13'
               stroke='black'
@@ -64,7 +64,7 @@ const SetupGuide = ({ showSetupGuide, setShowSetupGuide }) => {
             </p>
 
             <svg viewBox='0 0 32 32' className='w-8 h-8 mr-4'>
-              <circle cx='16' cy='16' r='16' fill='black' fill-opacity='0.05' />
+              <circle cx='16' cy='16' r='16' fill='black' fillOpacity='0.05' />
               {showMoreActivateAccountPayments ? (
                 <path
                   d='M22 19L16 13L10 19'
@@ -126,7 +126,7 @@ const SetupGuide = ({ showSetupGuide, setShowSetupGuide }) => {
           >
             <p className='text-lg font-bold w-72'>Set up your account</p>
             <svg viewBox='0 0 32 32' className='w-8 h-8 mr-4'>
-              <circle cx='16' cy='16' r='16' fill='black' fill-opacity='0.05' />
+              <circle cx='16' cy='16' r='16' fill='black' fillOpacity='0.05' />
 
               {showMoreSetupYourAccounts ? (
                 <path
@@ -201,7 +201,7 @@ const SetupGuide = ({ showSetupGuide, setShowSetupGuide }) => {
             </p>
 
             <svg viewBox='0 0 32 32' className='w-8 h-8 mr-4'>
-              <circle cx='16' cy='16' r='16' fill='black' fill-opacity='0.05' />
+              <circle cx='16' cy='16' r='16' fill='black' fillOpacity='0.05' />
               {showMoreGetStartedWithSquarePOS ? (
                 <path
                   d='M22 19L16 13L10 19'
